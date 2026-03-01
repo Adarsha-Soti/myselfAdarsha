@@ -2,14 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import projectRouter from './routers/projectRouter.js';
 
-//initialization of environment 
 dotenv.config();
-
 const PORT =process.env.PORT ||4000;
 const app= express();
 
-//middleware
 app.use(cors());
 app.use(express.json());
 
@@ -17,6 +15,8 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("my portfolio website base url");
 });
+//routers
+app.use("/api",projectRouter);
 
 //mongoose connection
 mongoose.connect(process.env.MONGO_URL)

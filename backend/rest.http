@@ -1,0 +1,26 @@
+@localhost=http://localhost:4000
+
+POST /api/v1/projects
+Content-Type: application/json  
+
+{
+    "title":"Project 1",
+    "description":"This is the first project",
+    "image":"https://example.com/image1.jpg",
+    "githubLink":"https://github.com/example/project1"  
+}
+
+GET /api/v1/projects    
+
+GET /api/v1/projects/{id}
+DELETE /api/v1/projects/{id}
+
+PUT /api/v1/projects/{id}
+Content-Type: application/json  
+
+{
+    "title":"Updated Project 1",
+    "description":"This is the updated first project",
+    "image":"https://example.com/updated_image1.jpg",
+    "githubLink":"https://github.com/example/updated_project1"  
+}
